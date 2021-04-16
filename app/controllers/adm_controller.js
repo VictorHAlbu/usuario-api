@@ -1,8 +1,11 @@
+var Adm = require('../models/adm.js');
+
 const AdmController = {
     index: (req, res, next) => {
-        res.send([{id: 1, name: 'Victor'}]);
+        Adm.find().then(dado =>{
+        res.send(dado);
+    });   
     }
-
 }
 
 module.exports = AdmController;
